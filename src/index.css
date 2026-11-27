@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  /* Proposed Redesign Palette — architectural steel & weathered Corten tones */
+  --color-charcoal: #202322;
+  --color-graphite: #303431;
+  --color-corten: #A65335;
+  --color-corten-deep: #8A4329;
+  --color-sand: #E9E2D7;
+  --color-concrete: #AAA9A2;
+  --color-offwhite: #F7F6F2;
+  --color-ink-muted: #585A55;
+
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-editorial: "Fraunces", ui-serif, Georgia, serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-offwhite);
+    color: var(--color-charcoal);
+    scroll-padding-top: 5.5rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  /* Accessible focus ring across all interactive elements */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--color-corten);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
